@@ -1,17 +1,24 @@
 {% extends 'base.html' %} {% block content %}
 <div class="navbar navbar-light bg-light">
     <h1 class="navbar-brand">Glioma Brain Tumor Identification Website</h1>
+    <link href="{{url_for('static', filename='style.css')}}" rel="stylesheet" />
 </div>
 <div style="width: 100%; margin-top: 75px; margin-bottom: 75px">
     <div class="card mx-auto" style="width: 25rem">
         <div class="card-body">
-            <img
-                class="img-thumbnail"
-                src="../static/blank-image.jpg"
-                alt="Why"
-            />
+            <img class="img-thumbnail" src="{{src}}" alt="Image" />
             <h3 class="card-title">Result:</h3>
-            <button class="btn btn-primary">Upload Image</button>
+            <form
+                method="POST"
+                action="upload_image"
+                enctype="multipart/form-data"
+            >
+                <label class="btn btn-primary" for="image-upload"
+                    >Upload Image</label
+                >
+                <input id="image-upload" type="file" name="file" />
+                <button class="btn btn-primary">Submit</button>
+            </form>
         </div>
     </div>
 </div>
