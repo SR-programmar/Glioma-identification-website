@@ -8,8 +8,6 @@ app = Flask(__name__)
 
 ## Image will be saved here temporarily
 LOCAL_IMAGE = "local_image"
-# Permitted file extensions
-ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg"}
 
 # Set the directory to an environment variable
 app.config["LOCAL_IMAGE"] = "local_image"
