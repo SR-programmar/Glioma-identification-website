@@ -16,13 +16,11 @@
                 src="{{url_for('retrieve_image', filename=file)}}"
                 alt="MRI Scan Image Display"
             />
-            <h1>"1"</h1>
             {% else %}<img
                 class="img-thumbnail"
                 src="../static/blank-image.jpg"
                 alt="MRI Scan Image Display"
             />
-            <h1>"2"</h1>
             {% endif %}
 
             <h3 class="card-title">Result:</h3>
@@ -31,11 +29,11 @@
                 action="upload_image"
                 enctype="multipart/form-data"
             >
-                <label class="btn btn-primary" for="image-upload"
+                <label class="btn btn-success" for="image-upload"
                     >Upload Image</label
                 >
-                <input id="image-upload" type="file" name="file" />
-                <button class="btn btn-primary">Submit</button>
+                <input id="image-upload" type="file" name="file" /><br />
+                <button class="btn btn-success">Submit</button>
             </form>
         </div>
     </div>
