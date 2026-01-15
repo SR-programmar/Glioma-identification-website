@@ -32,7 +32,7 @@ def upload_image():
         file = request.files["file"]
         filepath = os.path.join(app.config["LOCAL_IMAGE"], file.filename)
         file.save(filepath)
-        print("Uploading file...")
+        
 
     return redirect(url_for('home_page_filename', filename=file.filename))
 
