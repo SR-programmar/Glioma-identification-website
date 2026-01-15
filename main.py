@@ -4,7 +4,6 @@ from flask import Flask, render_template, request, redirect, url_for, send_from_
 app = Flask(__name__)
 
 LOCAL_IMAGE = "local_image"
-ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg"}
 
 app.config["LOCAL_IMAGE"] = "local_image"
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1000 * 1000
