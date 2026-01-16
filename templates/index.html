@@ -21,9 +21,14 @@
                 src="../static/blank-image.jpg"
                 alt="MRI Scan Image Display"
             />
+            {% endif %} {% if result != None %} {% if "Glioma" in result %}
+            <h3 class="card-title" style="color: #ff5757">{{result}}</h3>
+            {% else %}
+            <h3 class="card-title" style="color: #87ff54">{{result}}</h3>
+            {% endif %} {% else %}
+            <h3 class="card-title">Result:</h3>
             {% endif %}
 
-            <h3 class="card-title">Result:</h3>
             <form
                 method="POST"
                 action="upload_image"

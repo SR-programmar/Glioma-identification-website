@@ -1,3 +1,5 @@
+### Keep clean repository ###
 tum_env/
 local_image/
+__pycache__/
 glioma_vs_normal.keras
