@@ -6,6 +6,11 @@
 </div>
 <!-- End of Navigation Bar -->
 
+{% with messages = get_flashed_messages() %} {% if messages %} {% for msg in
+messages %}
+<h1 class="alert alert-danger">{{msg}}</h1>
+{% endfor %} {% endif %} {% endwith %}
+
 <!-- Website Card -->
 <div style="width: 100%; margin-top: 75px; margin-bottom: 75px">
     <div class="card mx-auto" style="width: 25rem">
@@ -38,7 +43,7 @@
                     >Upload Image</label
                 >
                 <input id="image-upload" type="file" name="file" /><br />
-                <button class="btn btn-success">Submit</button>
+                <button class="btn btn-success">Analyze</button>
             </form>
         </div>
     </div>

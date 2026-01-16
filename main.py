@@ -2,7 +2,7 @@
 
 import os
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory, session, flash
-from helper import clear_dir, predict_image
+from helper import clear_dir, predict_image, valid_extension
 # App
 app = Flask(__name__)
 app.secret_key = "12345"
@@ -36,15 +36,22 @@ def upload_image():
         clear_dir()
         file = request.files["file"]
         
-        filepath = os.path.join(app.config["LOCAL_IMAGE"], file.filename)
+        if file.filename == '':
+            flash("No image was uploaded")
+        elif not valid_extension(file.filename):
+            flash("Image must be PNG or JPG format")
+        else:
+            print("File name is blank")
+            filepath = os.path.join(app.config["LOCAL_IMAGE"], file.filename)
 
-        file.save(filepath)
-        
-        prediction = predict_image()
-        session["result"] = prediction
+            file.save(filepath)
+            
+            prediction = predict_image()
+            session["result"] = prediction
 
-        return redirect(url_for('home_page_filename', filename=file.filename))
+            return redirect(url_for('home_page_filename', filename=file.filename))
 
+    return redirect(url_for("home_page"))
 
 # Retrieves an image from local directory to be displayed
 @app.route("/retrieve_image/<filename>")

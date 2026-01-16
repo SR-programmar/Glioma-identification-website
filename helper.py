@@ -44,8 +44,8 @@ def predict_image():
   predictions = model.predict(img)
   probs = tf.nn.sigmoid(predictions)[0]
 
-  chance_tumor = round(probs[0].numpy(), 2) * 100
-  chance_normal = round(probs[1].numpy(), 2) * 100
+  chance_tumor = int(round(probs[0].numpy(), 2) * 100)
+  chance_normal = int(round(probs[1].numpy(), 2) * 100)
 
 
   if chance_normal > chance_tumor:
