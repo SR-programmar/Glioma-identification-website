@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <link
@@ -12,6 +12,18 @@
         <title>Brain Tumor Identification</title>
     </head>
     <body>
+        <!-- Navigation Bar -->
+        <div class="navbar navbar-light bg-light">
+            <h1 class="navbar-brand">
+                Glioma Brain Tumor Identification Website
+            </h1>
+            <link
+                href="{{url_for('static', filename='style.css')}}"
+                rel="stylesheet"
+            />
+        </div>
+        <!-- End of Navigation Bar -->
+
         {% block content %} {% endblock %}
     </body>
 </html>

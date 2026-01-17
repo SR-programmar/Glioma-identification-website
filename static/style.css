@@ -11,3 +11,9 @@ button,
 label {
     width: 350px;
 }
+
+.card-container {
+    width: 100%;
+    margin-top: 75px;
+    margin-bottom: 75px;
+}
